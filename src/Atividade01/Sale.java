@@ -1,16 +1,16 @@
 package Atividade01;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Sale {
 
 	private int time;
 	private String date;
-	private int quantity;
+	private ArrayList itemsVenda;
 	
 	public Sale(int time, String date) {
-		super();
+		itemsVenda = new ArrayList<SaleLineItem>();
 		this.time = time;
 		this.date = date;
 	}
@@ -31,18 +31,20 @@ public class Sale {
 		this.date = date;
 	}
 
-	 public  SaleLineItem makeLineItem(ProductSpecification produto, int quantity) {
+	 public void makeLineItem(ProductSpecification produto, int quantity) {
 		SaleLineItem saleLineItem = new SaleLineItem(produto, quantity);
-		
-		return saleLineItem;
+		this.itemsVenda.add(saleLineItem);
 	}
 	
-	public int getTotal(ArrayList array) {
+	public int getTotal() {
 		int total = 0;
-		SaleLineItem subtotal;
-		for (int i = 0; i < 5; i++) {
-			subtotal = (SaleLineItem) array.get(i);
-			total += subtotal.getSubTotal();
+		Iterator<SaleLineItem> iteratorItemsVenda = this.itemsVenda.iterator();
+		
+		while (iteratorItemsVenda.hasNext()) {
+			SaleLineItem saleslineitem = iteratorItemsVenda.next();
+			total = total + saleslineitem.getSubTotal();
+			
+			
 		}
 		
 		System.out.println("++++++++++++++++++");
