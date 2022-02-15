@@ -8,7 +8,7 @@ public class Sale {
 	private int time;
 	private String date;
 	private ArrayList itemsVenda;
-	
+
 	public Sale(int time, String date) {
 		itemsVenda = new ArrayList<SaleLineItem>();
 		this.time = time;
@@ -31,28 +31,25 @@ public class Sale {
 		this.date = date;
 	}
 
-	 public void makeLineItem(ProductSpecification produto, int quantity) {
+	public void makeLineItem(ProductSpecification produto, int quantity) {
 		SaleLineItem saleLineItem = new SaleLineItem(produto, quantity);
 		this.itemsVenda.add(saleLineItem);
 	}
-	
+
 	public int getTotal() {
 		int total = 0;
 		Iterator<SaleLineItem> iteratorItemsVenda = this.itemsVenda.iterator();
-		
+
 		while (iteratorItemsVenda.hasNext()) {
 			SaleLineItem saleslineitem = iteratorItemsVenda.next();
 			total = total + saleslineitem.getSubTotal();
-			
-			
+
 		}
-		
+
 		System.out.println("++++++++++++++++++");
 		System.out.println("Total no carrinho de compras: " + total);
 		System.out.println("++++++++++++++++++");
 		return total;
 	}
-	
-	
 
 }
