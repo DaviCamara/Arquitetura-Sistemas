@@ -8,17 +8,17 @@ public class main {
 
 		Sale sale = new Sale(0, "Data");
 
-		ProductSpecification aaa = new ProductSpecification("aaa", 1, "111");
-		ProductSpecification bbb = new ProductSpecification("bbb", 2, "222");
-		ProductSpecification ccc = new ProductSpecification("ccc", 3, "333");
-		ProductSpecification ddd = new ProductSpecification("ddd", 4, "444");
-		ProductSpecification eee = new ProductSpecification("eee", 5, "555");
+		ProductSpecification product01 = new ProductSpecification("Notebook Dell", 1000, "1");
+		ProductSpecification product02 = new ProductSpecification("MacBookPro", 2000, "2");
+		ProductSpecification product03 = new ProductSpecification("Notebook Avell", 3000, "3");
+		ProductSpecification product04 = new ProductSpecification("IPhone 10", 4000, "4");
+		ProductSpecification product05 = new ProductSpecification("Redmi 9S", 5000, "5");
 
-		sale.makeLineItem(aaa, 1);
-		sale.makeLineItem(bbb, 2);
-		sale.makeLineItem(ccc, 3);
-		sale.makeLineItem(ddd, 4);
-		sale.makeLineItem(eee, 5);
+		sale.makeLineItem(product01, 1);
+		sale.makeLineItem(product02, 2);
+		sale.makeLineItem(product03, 3);
+		sale.makeLineItem(product04, 4);
+		sale.makeLineItem(product05, 5);
 
 		sale.getTotal();
 

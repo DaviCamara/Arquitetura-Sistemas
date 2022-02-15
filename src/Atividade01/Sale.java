@@ -36,8 +36,8 @@ public class Sale {
 		this.itemsVenda.add(saleLineItem);
 	}
 
-	public int getTotal() {
-		int total = 0;
+	public double getTotal() {
+		double total = 0;
 		Iterator<SaleLineItem> iteratorItemsVenda = this.itemsVenda.iterator();
 
 		while (iteratorItemsVenda.hasNext()) {
@@ -47,7 +47,7 @@ public class Sale {
 		}
 
 		System.out.println("++++++++++++++++++");
-		System.out.println("Total no carrinho de compras: " + total);
+		System.out.println("Total no carrinho de compras: R$" + total);
 		System.out.println("++++++++++++++++++");
 		return total;
 	}

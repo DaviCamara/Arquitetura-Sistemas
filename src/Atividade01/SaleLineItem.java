@@ -10,8 +10,8 @@ public class SaleLineItem {
 		this.product = product;
 	}
 
-	public int getSubTotal() {
-		int subtotal = quantity * product.getPrice();
+	public double getSubTotal() {
+		double subtotal = quantity * product.getPrice();
 
 		return subtotal;
 	}

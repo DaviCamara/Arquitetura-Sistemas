@@ -3,10 +3,10 @@ package Atividade01;
 public class ProductSpecification {
 
 	private String description;
-	private int price;
+	private double price;
 	private String itemID;
 
-	public ProductSpecification(String description, int price, String itemID) {
+	public ProductSpecification(String description, double price, String itemID) {
 		this.description = description;
 		this.price = price;
 		this.itemID = itemID;
@@ -20,11 +20,11 @@ public class ProductSpecification {
 		this.description = description;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
