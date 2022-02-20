@@ -18,6 +18,7 @@ public class ControladorRealizarVenda {
 		Double total = sale.getTotal();
 		
 		return total;
+		//
 	}
 	
 	public void adicionarPagamento() {
