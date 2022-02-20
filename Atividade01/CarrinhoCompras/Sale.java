@@ -30,7 +30,14 @@ public class Sale {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+	
+	/*
+	public String getProductName() {
+		
+		String ProductName = this.itemsVenda
+		return ProductName;
+	}
+*/
 	public void makeLineItem(ProductSpecification produto, int quantity) {
 		SaleLineItem saleLineItem = new SaleLineItem(produto, quantity);
 		this.itemsVenda.add(saleLineItem);

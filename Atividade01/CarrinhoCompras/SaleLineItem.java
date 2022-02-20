@@ -15,5 +15,12 @@ public class SaleLineItem {
 
 		return subtotal;
 	}
+	
+	public String getProductName() {
+		
+		String productName = product.getDescription();
+		
+		return productName;
+	}
 
 }
