@@ -21,8 +21,8 @@ public class ControladorRealizarVenda {
 		//
 	}
 	
-	public void adicionarPagamento() {
+	public void efetuarPagamento(String tipoPagamento, Double pagamento) {
 		
-		//TODO:auto-generated STUB
+		sale.efetuarPagamento(tipoPagamento, pagamento);
 	}
 }

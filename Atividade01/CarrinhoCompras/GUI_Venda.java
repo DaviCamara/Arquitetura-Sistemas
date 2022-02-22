@@ -1,59 +1,76 @@
 package CarrinhoCompras;
 
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.*;
+import java.nio.file.spi.FileSystemProvider;
+import java.util.Scanner;
 
 class GUI_Venda {
+
 	public void createGUI() {
-
+		Scanner scan = new Scanner(System.in);
 		ControladorRealizarVenda controller = new ControladorRealizarVenda();
+		Catalog catalog = new Catalog();
 
-		JFrame frame = new JFrame("Carrinho de Compras");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500, 100);
+		System.out.println("Digite qual produto vocÊ quer comprar");
+		System.out.println("01 --- Notebook Dell");
+		System.out.println("02 --- MacBookPro ");
+		System.out.println("03 --- Notebook Avell");
+		System.out.println("04 --- IPhone 10");
+		System.out.println("05 --- Redmi 9");
+		System.out.println();
 
-		JPanel panel = new JPanel();
+		int input = scan.nextInt();
 
-		JButton addItemCarrinho = new JButton("Adicionar Item ao Carrinho");
-		JButton totalVenda = new JButton("Totalizar Venda");
-		JButton addPagamento = new JButton("Adicionar Pagamento");
+		System.out.println("Digite quantas unidades do produto você deseja comprar");
+		System.out.println();
+		
+		int unidades = scan.nextInt();
 
-		panel.add(addItemCarrinho);
-		panel.add(totalVenda);
-		panel.add(addPagamento);// Adds Button to content pane of frame
-		frame.getContentPane().add(BorderLayout.SOUTH, panel);
-		frame.setVisible(true);
+		if (input == 01) {
 
-		// FUNÇÕES DE CLICK DOS BOTÕES.
-		addItemCarrinho.addActionListener(new ActionListener() {
+			controller.adicionartItem(catalog.product01, unidades);
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				
-				//TODO: FORMA DE SELECIONAR OS ITEMS A SEREM ADICIONADOS.
-				//Sale carrinho = controller.adicionartItem(null, 0);
-				//System.out.println("Item adicionado ao carrinho: " + carrinho );
-			}
-		});
+		}
+		if (input == 02) {
 
-		totalVenda.addActionListener(new ActionListener() {
+			controller.adicionartItem(catalog.product02, unidades);
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				controller.totalizarVenda();
-			}
-		});
+		}
 
-		addPagamento.addActionListener(new ActionListener() {
+		if (input == 03) {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				controller.adicionarPagamento();
-			}
-		});
+			controller.adicionartItem(catalog.product03, unidades);
+
+		}
+
+		if (input == 04) {
+
+			controller.adicionartItem(catalog.product04, unidades);
+
+		}
+
+		if (input == 05) {
+
+			controller.adicionartItem(catalog.product05, unidades);
+
+		}
+
+		controller.totalizarVenda();
+	
+		
+		System.out.println("Por favor selecioner o tipo de pagamento");
+		System.out.println("01 --- PIX");
+		System.out.println("02 ---- Cartão");
+		
+		String tipoPagamento = scan.next();
+		
+		System.out.println("Por favor digite o valro a ser pago");
+		
+		Double pagamento = scan.nextDouble();
+		
+		
+		
+		controller.efetuarPagamento(tipoPagamento, pagamento);
+		
 
 	}
 
