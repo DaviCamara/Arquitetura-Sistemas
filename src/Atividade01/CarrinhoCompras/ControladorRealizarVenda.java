@@ -1,4 +1,4 @@
-package CarrinhoCompras;
+package Atividade01.CarrinhoCompras;
 
 public class ControladorRealizarVenda {
 	//TODO: Change null to todayDate.
@@ -21,8 +21,8 @@ public class ControladorRealizarVenda {
 		//
 	}
 	
-	public void adicionarPagamento() {
+	public void efetuarPagamento(String tipoPagamento, Double pagamento) {
 		
-		//TODO:auto-generated STUB
+		sale.efetuarPagamento(tipoPagamento, pagamento);
 	}
 }

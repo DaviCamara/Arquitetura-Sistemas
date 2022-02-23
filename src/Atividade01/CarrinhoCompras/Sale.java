@@ -1,4 +1,4 @@
-package CarrinhoCompras;
+package Atividade01.CarrinhoCompras;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -8,6 +8,7 @@ public class Sale {
 	private int time;
 	private String date;
 	private ArrayList itemsVenda;
+	private Pagamento pagamento;
 
 	public Sale(int time, String date) {
 		itemsVenda = new ArrayList<SaleLineItem>();
@@ -30,14 +31,20 @@ public class Sale {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	
-	/*
-	public String getProductName() {
-		
-		String ProductName = this.itemsVenda
-		return ProductName;
+
+	public void efetuarPagamento(String tipoPagamento, Double pagamento) {
+		Pagamento pagamentoEfetuado = new Pagamento(tipoPagamento, pagamento);
+
+		System.out.println("Pagamento Efetuado");
+
 	}
-*/
+
+	/*
+	 * public String getProductName() {
+	 * 
+	 * String ProductName = this.itemsVenda return ProductName; }
+	 */
+
 	public void makeLineItem(ProductSpecification produto, int quantity) {
 		SaleLineItem saleLineItem = new SaleLineItem(produto, quantity);
 		this.itemsVenda.add(saleLineItem);
