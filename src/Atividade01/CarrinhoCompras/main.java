@@ -6,8 +6,7 @@ public class main {
 
 	public static void main(String[] args) {
 
-		
-		GUI_Venda gui = new GUI_Venda();
+		Gui_Sale gui = new Gui_Sale();
 		gui.createGUI();
 	}
 
