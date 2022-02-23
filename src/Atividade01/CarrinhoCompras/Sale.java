@@ -7,11 +7,11 @@ public class Sale {
 
 	private int time;
 	private String date;
-	private ArrayList itemsVenda;
-	private Pagamento pagamento;
+	private ArrayList<SaleLineItem> saleItems;
+	private Payment payment;
 
 	public Sale(int time, String date) {
-		itemsVenda = new ArrayList<SaleLineItem>();
+		saleItems = new ArrayList<SaleLineItem>();
 		this.time = time;
 		this.date = date;
 	}
@@ -32,30 +32,27 @@ public class Sale {
 		this.date = date;
 	}
 
-	public void efetuarPagamento(String tipoPagamento, Double pagamento) {
-		Pagamento pagamentoEfetuado = new Pagamento(tipoPagamento, pagamento);
+	public Double makePayment(String paymentType, Double paymentValue) {
+		Payment paymentComputed = new Payment(paymentType, paymentValue);
 
-		System.out.println("Pagamento Efetuado");
+		Double paymentComputedValue = paymentComputed.getPaymentValue();
+		
+		return paymentComputedValue;
+		//System.out.println("Pagamento Efetuado");
 
 	}
 
-	/*
-	 * public String getProductName() {
-	 * 
-	 * String ProductName = this.itemsVenda return ProductName; }
-	 */
-
-	public void makeLineItem(ProductSpecification produto, int quantity) {
-		SaleLineItem saleLineItem = new SaleLineItem(produto, quantity);
-		this.itemsVenda.add(saleLineItem);
+	public void makeLineItem(ProductSpecification product, int quantity) {
+		SaleLineItem saleLineItem = new SaleLineItem(product, quantity);
+		this.saleItems.add(saleLineItem);
 	}
 
-	public double getTotal() {
+	public double getSaleTotal() {
 		double total = 0;
-		Iterator<SaleLineItem> iteratorItemsVenda = this.itemsVenda.iterator();
+		Iterator<SaleLineItem> iteratorSaleItems = this.saleItems.iterator();
 
-		while (iteratorItemsVenda.hasNext()) {
-			SaleLineItem saleslineitem = iteratorItemsVenda.next();
+		while (iteratorSaleItems.hasNext()) {
+			SaleLineItem saleslineitem = iteratorSaleItems.next();
 			total = total + saleslineitem.getSubTotal();
 
 		}
