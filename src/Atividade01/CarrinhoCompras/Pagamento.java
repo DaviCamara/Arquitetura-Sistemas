@@ -1,4 +1,4 @@
-package CarrinhoCompras;
+package Atividade01.CarrinhoCompras;
 
 public class Pagamento {
 

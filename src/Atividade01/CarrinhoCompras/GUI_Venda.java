@@ -1,4 +1,4 @@
-package CarrinhoCompras;
+package Atividade01.CarrinhoCompras;
 
 import java.nio.file.spi.FileSystemProvider;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package CarrinhoCompras;
+package Atividade01.CarrinhoCompras;
 
 import java.util.ArrayList;
 import java.util.Iterator;
